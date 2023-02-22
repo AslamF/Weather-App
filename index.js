@@ -7,13 +7,21 @@ form.addEventListener("submit", () => {
   fetchAPI();
 });
 
-function fetchAPI() {
+async function fetchAPI() {
   let inputValue = cityValue.value;
-  fetch(
-    "https://api.openweathermap.org/data/2.5/weather?q=" +
-      inputValue +
-      "&units=imperial&appid=b98c623e9d5f8d81b7ec45e5228c80b8"
-  )
+  try {
+    const response = await fetch(
+      "https://api.openweathermap.org/data/2.5/weather?q=" +
+        inputValue +
+        "&units=imperial&appid=b98c623e9d5f8d81b7ec45e5228c80b8"
+    );
+    const weatherData = await response.json();
+    console.log(weatherData.main.temp_max);
+  } catch (error) {
+    console.log("Error");
+  }
+}
+/*
     .then(function (response) {
       return response.json();
     })
@@ -24,4 +32,4 @@ function fetchAPI() {
       console.log(response.name);
       console.log(response.wind.speed);
     });
-}
+*/
