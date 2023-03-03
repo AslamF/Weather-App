@@ -4,6 +4,10 @@ const cityValue = document.querySelector("#city");
 const temperature = document.querySelector(".temperatureContainer");
 const locationName = document.querySelector(".locationContainer");
 const weatherType = document.querySelector(".weatherContainer");
+const wind = document.querySelector(".wind");
+const humidity = document.querySelector(".humidity");
+const visibility = document.querySelector(".visibility");
+const pressure = document.querySelector(".pressure");
 
 const array = [];
 
@@ -24,12 +28,21 @@ async function fetchAPI() {
     console.log(weatherData);
 
     const temp = weatherData.main.temp;
-    const wind = weatherData.wind.speed;
     const name = weatherData.name;
     const weather = weatherData.weather[0].main;
-    const dtTime = new Date();
-
-    const object = new weatherObject(temp, wind, name, weather);
+    const humidity = weatherData.main.humidity;
+    const wind = weatherData.wind.speed;
+    const visibility = weatherData.visibility / 1000;
+    const pressure = weatherData.main.pressure;
+    const object = new weatherObject(
+      temp,
+      name,
+      weather,
+      wind,
+      humidity,
+      visibility,
+      pressure
+    );
     array.splice(0, array.length);
     array.push(object);
 
@@ -40,11 +53,22 @@ async function fetchAPI() {
   }
 }
 
-function weatherObject(temp, wind, name, weather) {
+function weatherObject(
+  temp,
+  name,
+  weather,
+  wind,
+  humidity,
+  visibility,
+  pressure
+) {
   this.temp = temp;
-  this.wind = wind;
   this.name = name;
   this.weather = weather;
+  this.wind = wind;
+  this.humidity = humidity;
+  this.visibility = visibility;
+  this.pressure = pressure;
 }
 
 function render() {
@@ -52,5 +76,9 @@ function render() {
     temperature.textContent = object.temp;
     locationName.textContent = object.name;
     weatherType.textContent = object.weather;
+    wind.textContent = object.wind + "m/s";
+    humidity.textContent = object.humidity + "%";
+    visibility.textContent = object.visibility + "km";
+    pressure.textContent = object.pressure + "hPa";
   });
 }

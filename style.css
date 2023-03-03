@@ -28,3 +28,16 @@ body{
     align-items: center;
     gap: 35px;
 }
+.bottomContent{
+    width: 100%;
+}
+.topPart{
+    display: flex;
+    justify-content: space-around;
+    
+}
+.bottomPart{
+    display: flex;
+    justify-content: space-around;
+    
+}
