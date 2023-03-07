@@ -1,12 +1,13 @@
+@font-face {
+    font-family: "Fortune";
+    src: url(Fortunecity-zX0L.ttf);
+}
 *{
     margin: 0;
     padding: 0;
     font-family: "Fortune";
 }
-@font-face {
-    font-family: "Fortune";
-    src: url(/Fortunecity-zX0L.ttf);
-}
+
 body{
     height: 100vh;
     display: flex;
