@@ -6,12 +6,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="index.js" defer></script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/8c0a82cd79.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Document</title>
 </head>
 <body>
     <form>
-        <input type="text" id="city" name="city">
-        <button>search</button>
+        <input type="text" id="city" name="city" placeholder="City Name">
+        
     </form>
 
 
@@ -30,12 +32,24 @@
         </div>
         <div class="bottomContent">
             <div class="topPart">
-                <div class="wind"></div>
-                <div class="humidity"></div>
+                <div class="windIcon">
+                    <div id="icon" class="fas fa-wind"></div>
+                    <div class="wind"></div>
+                </div>
+                <div class="humidityIcon">
+                    <div id="icon" class="fas fa-cloud-rain"></div>
+                    <div class="humidity"></div>
+                </div>
             </div>
             <div class="bottomPart">
-                <div class="visibility"></div>
-                <div class="pressure"></div>
+                <div class="visibleIcon">
+                    <div id="icon" class="fa fa-eye"></div>
+                    <div class="visibility"></div>
+                </div>
+                <div class="pressureIcon">
+                    <div id="icon" class="fa fa-exclamation-circle"></div>
+                    <div class="pressure"></div>
+                </div>
             </div>          
         </div>
     </div>

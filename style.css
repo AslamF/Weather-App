@@ -1,6 +1,11 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: "Fortune";
+}
+@font-face {
+    font-family: "Fortune";
+    src: url(/Fortunecity-zX0L.ttf);
 }
 body{
     height: 100vh;
@@ -9,17 +14,33 @@ body{
     align-items: center;
     justify-content: center;
     gap: 25px;
+    background-color: #999999;
+}
+input{
+    padding: 5px;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+}
+.invalid{
+    background-color: lightcoral;
+    color: white;
 }
 
 .cardContainer{
-    height: 350px;
-    width: 500px;
+    height: 450px;
+    width: 600px;
     display: flex;
     flex-direction: column;
     gap: 15px;
     align-items: center;
     justify-content: space-around;
-    background-color: beige;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 15px;
+    background-position: center;
+    border: none;
+    
 }
 
 .topContent{
@@ -39,5 +60,33 @@ body{
 .bottomPart{
     display: flex;
     justify-content: space-around;
+    
+}
+.locationContainer, .weatherContainer{
+    font-size: 25px;
+    color: white;
+}
+.temperatureContainer{
+    font-size: 55px;
+    font-weight: bold;
+    letter-spacing: 1.5px;
+    color: white;
+}
+
+.windIcon,
+.humidityIcon,
+.visibleIcon,
+.pressureIcon{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    width: 50px;
+    font-size: 20px;
+    color: white;
+}
+
+
+#icon{
+    display: none;
     
 }
